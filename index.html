@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Stackly Freight Brokerage </title>
+
+    <style>
+         :root{
+    --ink:#10202F;
+    --paper:#EEF0EC;
+    --signal:#FF6A2B;
+    --rust:#B8360C;
+    --slate:#55606B;
+    --line:#D8DAD2;
+    --font-display:'Space Grotesk', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html,body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--paper);
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:28px;
+    min-height: 100vh;
+    font-family: var(--font-mono);
+    overflow: hidden;
+  }
+
+  .loader-logo{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 34px;
+    color: var(--ink);
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  }
+    .loader-logo span{
+        color:#FF6A2B;
+    }
+        @keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+.loader-track{
+    width: 260px;
+    height: 3px;
+    border-radius: 999px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.loader-fill{
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background-color: var(--signal);
+    animation: fill-progress 2.5s ease-in;
+}
+@keyframes  fill-progress{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+    
+}
+    </style>
+</head>
+<body>
+        <div class="loader-logo">
+            Stackly Freight Brokerage <span>.</span>
+        </div>
+
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+
+        <div class="loader-caption">
+             The Site is Loading...
+        </div>
+
+    <script>
+        setTimeout(function(){
+            window.location.href="home.html";
+        },3000)
+    </script>
+    
+</body>
+</html>
