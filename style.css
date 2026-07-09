@@ -430,6 +430,7 @@ section{
 }
 .home-service .title{
     width: 100%;
+    padding: 20px 10px;
     max-width:var(--container);
     display: flex;
     flex-direction: column;
