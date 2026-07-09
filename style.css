@@ -281,6 +281,9 @@ section{
 .nav-links a:hover::after{
     width:100%;
 }
+.nav-links a.active{
+    color: var(--secondary);
+}
 .contact{
     color:rgb(0, 0, 0);
     padding:0 45px;
@@ -651,6 +654,8 @@ section{
     border-radius: var(--radius-sm);
     width: fit-content;
     transition: var(--transition);
+    border: none;
+    cursor: pointer;
 }
 .btn-primary i{
     rotate: -45deg;
@@ -907,7 +912,7 @@ section{
         height: calc(100vh - 95px);
         padding: 20px;
         background: var(--primary-dark);
-
+        
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -924,6 +929,7 @@ section{
     }
     .nav-links a{
         width: 100%;
+        color: white;
         padding: var(--space-md) 0;
         border-bottom: 1px solid rgba(255,255,255,.1);
     }
@@ -1152,12 +1158,13 @@ backdrop-filter: blur(10px);
 }
 .field label{
     font-family: var(--font-secondary);
-    color: var(--primary);
+    color: var(--secondary);
     font-weight: var(--fw-bold);
     font-size: var(--fs-sm);
 }
 .field input,
-.field select{
+.field select,
+.field textarea{
     padding: var(--space-md);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -1168,17 +1175,23 @@ backdrop-filter: blur(10px);
     appearance: none;
     -webkit-appearance: none;
 }
+.field textarea{
+    resize: vertical;
+    min-height: 120px;
+}
 .field select{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath fill='%230B3A5B' d='M7 9 0 1.6 1.6 0 7 5.8 12.4 0 14 1.6z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right var(--space-md) center;
     padding-right: var(--space-2xl);
 }
-.field input::placeholder{
+.field input::placeholder,
+.field textarea::placeholder{
     color: var(--text-light);
 }
 .field input:focus,
-.field select:focus{
+.field select:focus,
+.field textarea:focus{
     outline: 2px solid var(--secondary);
 }
 
@@ -1201,13 +1214,14 @@ backdrop-filter: blur(10px);
 .form-note{
     font-family: var(--font-secondary);
     font-size: var(--fs-xs);
-    color: var(--text-light);
+    color:var(--secondary);
     text-align: right;
 }
 .form-note a{
-    color: var(--primary);
+    color: rgba(255, 0, 0, 0.505);
     text-decoration: underline;
     font-weight: var(--fw-semibold);
+    cursor: pointer;
 }
 
 @media (max-width: 1024px){
@@ -1811,13 +1825,14 @@ backdrop-filter: blur(10px);
 .footer-inner{
     max-width: var(--container);
     margin: 0 auto;
-    padding: 0 ;
+    padding:0 20px;
 }
  
 .footer-top{
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
     gap: var(--space-2xl);
+
 }
  
 .footer-brand{
@@ -1965,7 +1980,7 @@ backdrop-filter: blur(10px);
  
 @media (max-width: 900px){
     .footer-top{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         row-gap: var(--space-2xl);
     }
     .footer-brand{
@@ -1988,7 +2003,7 @@ backdrop-filter: blur(10px);
  
 @media (max-width: 640px){
     .footer-top{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     .footer-brand{
         flex-direction: column;
@@ -2149,4 +2164,47 @@ backdrop-filter: blur(10px);
         --reveal-distance:22px;
         --anim-base:.55s;
     }
+}
+.error {
+    color: red;
+    font-size: 13px;
+    display: block;
+    margin-top: 5px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.social a{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: all 0.3s ease;
+}
+
+.social a:hover{
+    background: var(--secondary);
+    color: var(--white);
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+    box-shadow: 0 10px 20px rgba(241,90,36,.3);
+}
+
+.social i{
+    transition: transform .3s ease;
+}
+
+.social a:hover i{
+    transform: scale(1.15);
 }

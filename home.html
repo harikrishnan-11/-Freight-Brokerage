@@ -268,60 +268,135 @@
             <p class="quote-card-lead">We guarantee a solution that matches your expectations and the reputation of your
                 business.</p>
 
-            <form id="quoteForm">
-                <div class="form-row">
-                    <div class="field">
-                        <label for="qName">Nice to meet you</label>
-                        <input type="text" id="qName" placeholder="What's your name" required>
-                    </div>
-                    <div class="field">
-                        <label for="qEmail">Email</label>
-                        <input type="email" id="qEmail" placeholder="Enter your email address" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="field">
-                        <label for="qPhone">Phone</label>
-                        <input type="tel" id="qPhone" placeholder="Your phone number" required>
-                    </div>
-                    <div class="field">
-                        <label for="qFreight">Freight type</label>
-                        <select id="qFreight" required>
-                            <option value="" selected disabled>Choose an option</option>
-                            <option>Road freight</option>
-                            <option>Sea transport</option>
-                            <option>Air freight</option>
-                            <option>Rail freight</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="field">
-                        <label for="qPickup">Pickup location</label>
-                        <input type="text" id="qPickup" placeholder="From" required>
-                    </div>
-                    <div class="field">
-                        <label for="qDelivery">Delivery location</label>
-                        <input type="text" id="qDelivery" placeholder="To" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="field">
-                        <label for="qWeight">Total weight (KG)</label>
-                        <input type="number" id="qWeight" placeholder="Enter number" required>
-                    </div>
-                    <div class="field">
-                        <label for="qHeight">Height (FT)</label>
-                        <input type="number" id="qHeight" placeholder="Enter number" required>
-                    </div>
-                </div>
-                <div class="form-footer">
-                    <button type="submit" class="btn-primary">Submit Message <i
-                            class="fa-solid fa-arrow-right"></i></button>
-                    <p class="form-note">By clicking on this button, you agree to our <a href="./404.html">Privacy
-                            Policy</a></p>
-                </div>
-            </form>
+           <form id="quoteForm">
+    <div class="form-row">
+        <div class="field">
+            <label for="qName">Nice to meet you</label>
+           <input
+    type="text"
+    id="qName"
+    name="name"
+    placeholder="What's your name"
+    required
+    minlength="3"
+    maxlength="50"
+    pattern="[A-Za-z ]+"
+    title="Name should contain only letters">
+        </div>
+
+        <div class="field">
+            <label for="qEmail">Email</label>
+            <input
+                type="email"
+                id="qEmail"
+                name="email"
+                placeholder="Enter your email address"
+                required
+                maxlength="100"
+                autocomplete="email">
+            <small class="error"></small>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="field">
+            <label for="qPhone">Phone</label>
+            <input
+                type="tel"
+                id="qPhone"
+                name="phone"
+                placeholder="Your phone number"
+                required
+                maxlength="10"
+                pattern="[0-9]{10}"
+                inputmode="numeric"
+                autocomplete="tel">
+            <small class="error"></small>
+        </div>
+
+        <div class="field">
+            <label for="qFreight">Freight Type</label>
+            <select id="qFreight" name="freight" required>
+                <option value="" selected disabled>Choose an option</option>
+                <option value="Road Freight">Road Freight</option>
+                <option value="Sea Transport">Sea Transport</option>
+                <option value="Air Freight">Air Freight</option>
+                <option value="Rail Freight">Rail Freight</option>
+            </select>
+            <small class="error"></small>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="field">
+            <label for="qPickup">Pickup Location</label>
+            <input
+                type="text"
+                id="qPickup"
+                name="pickup"
+                placeholder="From"
+                required
+                minlength="2"
+                maxlength="100">
+            <small class="error"></small>
+        </div>
+
+        <div class="field">
+            <label for="qDelivery">Delivery Location</label>
+            <input
+                type="text"
+                id="qDelivery"
+                name="delivery"
+                placeholder="To"
+                required
+                minlength="2"
+                maxlength="100">
+            <small class="error"></small>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="field">
+            <label for="qWeight">Total Weight (KG)</label>
+            <input
+                type="number"
+                id="qWeight"
+                name="weight"
+                placeholder="Enter number"
+                required
+                min="1"
+                max="100000"
+                step="0.1">
+            <small class="error"></small>
+        </div>
+
+        <div class="field">
+            <label for="qHeight">Height (FT)</label>
+            <input
+                type="number"
+                id="qHeight"
+                name="height"
+                placeholder="Enter number"
+                required
+                min="1"
+                max="100"
+                step="0.1">
+            <small class="error"></small>
+        </div>
+    </div>
+
+    <div class="form-footer">
+        <button type="submit" class="btn-primary">
+            Submit Message
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p class="form-note">
+            By clicking this button, you agree to our
+            <a href="./404.html">Privacy Policy</a>
+        </p>
+    </div>
+</form>
         </div>
     </section>
 
@@ -512,16 +587,36 @@
                         </div>
                         <a href="./contact.html" class="rating-arrow" aria-label="Read our reviews"><i class="fa-solid fa-arrow-right"></i></a>
                     </div>
+                   <div class="social">
+    <a href="./404.html" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="./404.html" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="./404.html" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+    <a href="./404.html" aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="./404.html" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+</div>
                 </div>
  
                 <div class="footer-links">
-                    <h4>Our company</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./about.html#team">Our Team</a></li>
-                        <li><a href="./projects.html" class="active">Our Project</a></li>
+                         <li><a href="./home.html">Home</a></li>
+                         <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./service.html">Service</a></li>
                         <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./pricing.html">Pricing</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -534,7 +629,17 @@
                         <li><a href="./service.html">Air freight</a></li>
                         <li><a href="./service.html">Rail freight</a></li>
                         <li><a href="./service.html">Home delivery</a></li>
-                        <li><a href="./service.html">Warehousing</a></li>
+                     
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="./404.html">Help Center</a></li>
+                        <li><a href="./404.html">Documentaion</a></li>
+                        <li><a href="./404.html">Case Studies</a></li>
+                        <li><a href="./404.html">FAQs</a></li>
+                        <li><a href="./404.html">Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -574,17 +679,9 @@
             revealEls.forEach(el => observer.observe(el));
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const quoteForm = document.getElementById('quoteForm');
-            if (!quoteForm) return;
-
-            quoteForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thanks! Your quote request has been submitted.');
-                quoteForm.reset();
-            });
-        });
+        
     </script>
+    <script src="./quoteFrom.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages-extra.css">
+    <title>Sign Up - Stackly Freight Brokerage</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-area">
+            <a href="./index.html">
+                <img src="./src/logo/Untitled design-compressed (1).webp" alt="Stackly logo">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="./home.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./service.html">Services</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./login.html" class="desktop-quote-btn">
+                Login
+            </a>
+        </nav>
+
+        <div class="contact">
+            <div class="number">
+                Call us (084) 123-456 88
+            </div>
+
+            <a href="./login.html" class="quote-btn">
+                Login
+            </a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+    <section class="auth-section" style="padding-bottom:0;">
+        <div class="auth-visual">
+            <img src="./src/images/service_5.webp" alt="Sea freight container ship">
+            <div class="auth-visual-content">
+                <span class="eyebrow">New here?</span>
+                <h2>Get quotes in minutes, not days</h2>
+                <p>Create an account to save your shipping profiles and get faster quotes on repeat routes.</p>
+            </div>
+        </div>
+
+        <div class="auth-form-wrap">
+            <div class="auth-card">
+              
+                <h1>Create your account</h1>
+                <p class="para">It only takes a minute to get started.</p>
+
+                <form id="signupForm" novalidate>
+
+    <div class="form-row" style="margin-bottom:0;">
+
+        <div class="field">
+            <label for="sFirstName">First Name</label>
+            <input type="text" id="sFirstName" placeholder="First name" required>
+            <small class="error"></small>
+        </div>
+
+        <div class="field">
+            <label for="sLastName">Last Name</label>
+            <input type="text" id="sLastName" placeholder="Last name" required>
+            <small class="error"></small>
+        </div>
+
+    </div>
+
+    <div class="field">
+        <label for="sCompany">Company</label>
+        <input type="text" id="sCompany" placeholder="Your company name">
+        <small class="error"></small>
+    </div>
+
+    <div class="field">
+        <label for="sEmail">Email</label>
+        <input type="email" id="sEmail" placeholder="Enter your email address" required>
+        <small class="error"></small>
+    </div>
+
+    <div class="field">
+        <label for="sPassword">Password</label>
+        <input type="password" id="sPassword" placeholder="Create a password" required>
+        <small class="error"></small>
+    </div>
+
+    <div class="field">
+        <label for="sRole">Account Type</label>
+        <select id="sRole" required>
+            <option value="" selected disabled>Choose an option</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        <small class="error"></small>
+    </div>
+
+    <div class="field">
+        <label class="auth-checkbox">
+            <input type="checkbox" id="terms">
+            I agree to the
+            <a href="./404.html"
+                style="color: var(--secondary); font-weight: 600; text-decoration: none;">
+                Terms of Service
+            </a>
+        </label>
+        <small class="error" id="termsError"></small>
+    </div>
+
+    <button type="submit" class="btn-primary">
+        Create Account
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+</form>
+                <div class="auth-divider">or sign up with</div>
+
+                <div class="auth-social">
+                    <button type="button"><i class="fa-brands fa-google"></i> Google</button>
+                    <button type="button"><i class="fa-brands fa-microsoft"></i> Microsoft</button>
+                </div>
+
+                <p class="auth-switch">Already have an account? <a href="./login.html">Log in</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="./nav.js"></script>
+    <script>
+        const form = document.getElementById("signupForm");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById("sFirstName");
+    const lastName = document.getElementById("sLastName");
+    const company = document.getElementById("sCompany");
+    const email = document.getElementById("sEmail");
+    const password = document.getElementById("sPassword");
+    const role = document.getElementById("sRole");
+    const terms = document.getElementById("terms");
+
+    // Clear previous errors
+    document.querySelectorAll(".error").forEach(function (error) {
+        error.textContent = "";
+    });
+
+    let isValid = true;
+
+    // First Name
+    if (firstName.value.trim() === "") {
+        document.querySelector("#sFirstName + .error").textContent = "First name is required";
+        isValid = false;
+    } else if (!/^[A-Za-z\s]+$/.test(firstName.value.trim())) {
+        document.querySelector("#sFirstName + .error").textContent = "Only letters are allowed";
+        isValid = false;
+    }
+
+    // Last Name
+    if (lastName.value.trim() === "") {
+        document.querySelector("#sLastName + .error").textContent = "Last name is required";
+        isValid = false;
+    } else if (!/^[A-Za-z\s]+$/.test(lastName.value.trim())) {
+        document.querySelector("#sLastName + .error").textContent = "Only letters are allowed";
+        isValid = false;
+    }
+
+    // Company (Optional)
+    if (company.value.trim() !== "" && !/^[A-Za-z0-9\s]+$/.test(company.value.trim())) {
+        document.querySelector("#sCompany + .error").textContent = "Invalid company name";
+        isValid = false;
+    }
+
+    // Email
+    if (email.value.trim() === "") {
+        document.querySelector("#sEmail + .error").textContent = "Email is required";
+        isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        document.querySelector("#sEmail + .error").textContent = "Enter a valid email";
+        isValid = false;
+    }
+
+    // Password
+    if (password.value.trim() === "") {
+        document.querySelector("#sPassword + .error").textContent = "Password is required";
+        isValid = false;
+    } else if (password.value.length < 6) {
+        document.querySelector("#sPassword + .error").textContent = "Minimum 6 characters";
+        isValid = false;
+    }
+
+    // Role
+    if (role.value === "") {
+        document.querySelector("#sRole + .error").textContent = "Select an account type";
+        isValid = false;
+    }
+
+    // Terms
+    if (!terms.checked) {
+        document.getElementById("termsError").textContent = "Please accept the Terms of Service";
+        isValid = false;
+    }
+
+    // Success
+    if (isValid) {
+
+        // Save signup details (optional)
+        localStorage.setItem("userEmail", email.value);
+        localStorage.setItem("userRole", role.value);
+
+        alert("Account Created Successfully!");
+
+        form.reset();
+
+        // Redirect after 1 second
+        setTimeout(function () {
+            window.location.href = "login.html";
+        }, 1000);
+    }
+});
+
+// Only letters in First Name
+document.getElementById("sFirstName").addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+// Only letters in Last Name
+document.getElementById("sLastName").addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+});
+    </script>
+</body>
+
+</html>
