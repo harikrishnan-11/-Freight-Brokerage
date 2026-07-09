@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<title>Admin Dashboard — Stackly</title>
+</head>
+<body class="dashboard-body">
+
+<div class="dash-shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <a href="./home.html" class="sidebar-logo">
+                <img src="./src/logo/Untitled design-compressed (1).webp" alt="Stackly logo">
+            </a>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+       
+        <nav class="sidebar-nav">
+            <p class="nav-label">Main</p>
+            <a href="#overview" class="nav-link active" data-section="overview">
+                <i class="fa-solid fa-grip"></i>Overview
+            </a>
+            <a href="#users" class="nav-link" data-section="users">
+                <i class="fa-solid fa-user-group"></i> Users
+            </a>
+            <a href="#team" class="nav-link" data-section="team">
+                <i class="fa-solid fa-users"></i> Team
+            </a>
+            <a href="#shipments" class="nav-link" data-section="shipments">
+                <i class="fa-solid fa-truck-fast"></i> Shipments
+            </a>
+            <a href="#orders" class="nav-link" data-section="orders">
+                <i class="fa-solid fa-box"></i> Orders
+            </a>
+
+            <p class="nav-label">Insights</p>
+            <a href="#analytics" class="nav-link" data-section="analytics">
+                <i class="fa-solid fa-chart-line"></i> Analytics
+            </a>
+            <a href="#reports" class="nav-link" data-section="reports">
+                <i class="fa-solid fa-file-lines"></i> Reports
+            </a>
+
+            <p class="nav-label">Account</p>
+            <a href="#settings" class="nav-link" data-section="settings">
+                <i class="fa-solid fa-gear"></i> Settings
+            </a>
+            <a href="./login.html" class="nav-link nav-link-danger">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+            </a>
+        </nav>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ============ MAIN ============ -->
+    <div class="dash-main">
+
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search users, shipments, orders…">
+            </div>
+
+            <div class="topbar-actions">
+                <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notif-dot"></span>
+                </button>
+                <div class="topbar-user">
+                    <div class="topbar-avatar">RC</div>
+                    <div class="topbar-user-text">
+                        <p class="topbar-user-name"><span id="userEmail"></span></p>
+                        <p class="topbar-user-email"><span id="userEmail"></span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="dash-section active" id="overview">
+            <div class="section-head">
+                <div>
+                    <h1>Admin Overview</h1>
+                    <p class="section-sub">Platform-wide activity across all customers.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Add User <i class="fa-solid fa-plus"></i></a>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-user-group"></i></span>
+                    <h3>1,284</h3>
+                    <p>Total users</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-truck-fast"></i></span>
+                    <h3>128</h3>
+                    <p>Active shipments</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-sack-dollar"></i></span>
+                    <h3>$84.2K</h3>
+                    <p>Revenue this month</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-headset"></i></span>
+                    <h3>9</h3>
+                    <p>Open support tickets</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h2>Recent shipments</h2>
+                    <a href="./404.html" class="link-read">Export <i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Shipment ID</th><th>Customer</th><th>Route</th><th>Status</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#STK-2291</td><td>Jordan Diaz</td><td>Chennai → Dubai</td>
+                                <td><span class="status status-transit">In transit</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2288</td><td>Priya Nair</td><td>Mumbai → Singapore</td>
+                                <td><span class="status status-delivered">Delivered</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2280</td><td>Amit Shah</td><td>Delhi → Hamburg</td>
+                                <td><span class="status status-pending">Pending</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ USERS ============ -->
+        <section class="dash-section" id="users">
+            <div class="section-head">
+                <div>
+                    <h1>Users</h1>
+                    <p class="section-sub">Every customer and staff account on the platform.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Add User <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jordan Diaz</td><td>jordan.diaz@client.com</td>
+                                <td><span class="role-badge role-customer">Customer</span></td>
+                                <td><span class="status status-delivered">Active</span></td>
+                                <td><a href="./404.html" class="link-read">Manage</a></td>
+                            </tr>
+                            <tr>
+                                <td>Priya Nair</td><td>priya.nair@client.com</td>
+                                <td><span class="role-badge role-customer">Customer</span></td>
+                                <td><span class="status status-delivered">Active</span></td>
+                                <td><a href="./404.html" class="link-read">Manage</a></td>
+                            </tr>
+                            <tr>
+                                <td>Rachel Collins</td><td>rachel.collins@stackly.com</td>
+                                <td><span class="role-badge role-admin">Admin</span></td>
+                                <td><span class="status status-delivered">Active</span></td>
+                                <td><a href="./404.html" class="link-read">Manage</a></td>
+                            </tr>
+                            <tr>
+                                <td>Amit Shah</td><td>amit.shah@client.com</td>
+                                <td><span class="role-badge role-customer">Customer</span></td>
+                                <td><span class="status status-pending">Suspended</span></td>
+                                <td><a href="./404.html" class="link-read">Manage</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TEAM ============ -->
+        <section class="dash-section" id="team">
+            <div class="section-head">
+                <div>
+                    <h1>Team</h1>
+                    <p class="section-sub">Manage staff roles and access.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Add Member <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="team-dash-grid">
+                <div class="team-dash-card">
+                    <div class="team-dash-avatar">RC</div>
+                    <h3>Rachel Collins</h3>
+                    <p>Fleet Coordinator</p>
+                    <a href="./404.html" class="link-read">View profile</a>
+                </div>
+                <div class="team-dash-card">
+                    <div class="team-dash-avatar">CD</div>
+                    <h3>Corbin Dallas</h3>
+                    <p>Warehouse Management</p>
+                    <a href="./404.html" class="link-read">View profile</a>
+                </div>
+                <div class="team-dash-card">
+                    <div class="team-dash-avatar">DF</div>
+                    <h3>Debor Fox</h3>
+                    <p>Director of Transportation</p>
+                    <a href="./404.html" class="link-read">View profile</a>
+                </div>
+                <div class="team-dash-card">
+                    <div class="team-dash-avatar">LL</div>
+                    <h3>Luisa Larson</h3>
+                    <p>Operations Director</p>
+                    <a href="./404.html" class="link-read">View profile</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SHIPMENTS ============ -->
+        <section class="dash-section" id="shipments">
+            <div class="section-head">
+                <div>
+                    <h1>Shipments</h1>
+                    <p class="section-sub">Every shipment across every customer.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">New Shipment <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <p>Full shipment management view is coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ORDERS ============ -->
+        <section class="dash-section" id="orders">
+            <div class="section-head">
+                <div>
+                    <h1>Orders</h1>
+                    <p class="section-sub">All orders placed across the platform.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Add Order <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-box"></i>
+                    <p>Order management view is coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ANALYTICS ============ -->
+        <section class="dash-section" id="analytics">
+            <div class="section-head">
+                <div>
+                    <h1>Analytics</h1>
+                    <p class="section-sub">Platform performance across routes, teams, and revenue.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Export Report <i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p>Analytics charts are coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ REPORTS ============ -->
+        <section class="dash-section" id="reports">
+            <div class="section-head">
+                <div>
+                    <h1>Reports</h1>
+                    <p class="section-sub">Generate and download platform reports.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">New Report <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <p>Report builder is coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SETTINGS ============ -->
+        <section class="dash-section" id="settings">
+            <div class="section-head">
+                <div>
+                    <h1>Settings</h1>
+                    <p class="section-sub">Platform configuration and admin preferences.</p>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings panel is coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

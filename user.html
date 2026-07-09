@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<title>My Dashboard — Stackly</title>
+</head>
+<body class="dashboard-body">
+
+<div class="dash-shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <a href="./home.html" class="sidebar-logo">
+                <img src="./src/logo/Untitled design-compressed (1).webp" alt="Stackly logo">
+            </a>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        
+        <nav class="sidebar-nav">
+            <p class="nav-label">Main</p>
+            <a href="#overview" class="nav-link active" data-section="overview">
+                <i class="fa-solid fa-grip"></i> Overview
+            </a>
+            <a href="#shipments" class="nav-link" data-section="shipments">
+                <i class="fa-solid fa-truck-fast"></i> My Shipments
+            </a>
+            <a href="#orders" class="nav-link" data-section="orders">
+                <i class="fa-solid fa-box"></i> My Orders
+            </a>
+            <a href="#track" class="nav-link" data-section="track">
+                <i class="fa-solid fa-location-crosshairs"></i> Track Shipment
+            </a>
+
+            <p class="nav-label">Account</p>
+            <a href="#billing" class="nav-link" data-section="billing">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Billing
+            </a>
+            <a href="#support" class="nav-link" data-section="support">
+                <i class="fa-solid fa-headset"></i> Support
+            </a>
+            <a href="#settings" class="nav-link" data-section="settings">
+                <i class="fa-solid fa-gear"></i> Settings
+            </a>
+            <a href="./login.html" class="nav-link nav-link-danger">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+            </a>
+        </nav>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ============ MAIN ============ -->
+    <div class="dash-main">
+
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search your shipments, orders…">
+            </div>
+
+            <div class="topbar-actions">
+                <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notif-dot"></span>
+                </button>
+                <div class="topbar-user">
+                    <div class="topbar-user-text">
+                        <p class="topbar-user-name"><span id="userEmail"></span></p>
+                        <p class="topbar-user-email"><span id="userEmail"></span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="dash-section active" id="overview">
+            <div class="section-head">
+                <div>
+                    <h1>Welcome back,</h1>
+                    <p class="section-sub">Here's a snapshot of your account today.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">New Booking <i class="fa-solid fa-plus"></i></a>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-truck-fast"></i></span>
+                    <h3>4</h3>
+                    <p>Shipments in transit</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-box"></i></span>
+                    <h3>27</h3>
+                    <p>Total orders placed</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                    <h3>$1,240</h3>
+                    <p>Outstanding balance</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-headset"></i></span>
+                    <h3>1</h3>
+                    <p>Open support ticket</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h2>Recent activity</h2>
+                    <a href="./404.html" class="link-read">View all <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Shipment ID</th><th>Route</th><th>Status</th><th>ETA</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#STK-2291</td><td>Chennai → Dubai</td>
+                                <td><span class="status status-transit">In transit</span></td>
+                                <td>Jul 12</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2277</td><td>Coimbatore → London</td>
+                                <td><span class="status status-delivered">Delivered</span></td>
+                                <td>Jul 03</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2265</td><td>Chennai → New York</td>
+                                <td><span class="status status-pending">Pending pickup</span></td>
+                                <td>Jul 16</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ MY SHIPMENTS ============ -->
+        <section class="dash-section" id="shipments">
+            <div class="section-head">
+                <div>
+                    <h1>My Shipments</h1>
+                    <p class="section-sub">Every shipment you've booked with us.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Book Shipment <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Shipment ID</th><th>Route</th><th>Freight type</th><th>Status</th><th>ETA</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#STK-2291</td><td>Chennai → Dubai</td><td>Sea freight</td>
+                                <td><span class="status status-transit">In transit</span></td>
+                                <td>Jul 12</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2277</td><td>Coimbatore → London</td><td>Air freight</td>
+                                <td><span class="status status-delivered">Delivered</span></td>
+                                <td>Jul 03</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2265</td><td>Chennai → New York</td><td>Sea freight</td>
+                                <td><span class="status status-pending">Pending pickup</span></td>
+                                <td>Jul 16</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#STK-2210</td><td>Bangalore → Singapore</td><td>Road freight</td>
+                                <td><span class="status status-delivered">Delivered</span></td>
+                                <td>Jun 21</td>
+                                <td><a href="./404.html" class="link-read">Track</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ MY ORDERS ============ -->
+        <section class="dash-section" id="orders">
+            <div class="section-head">
+                <div>
+                    <h1>My Orders</h1>
+                    <p class="section-sub">Order history and current requests.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Place Order <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-box"></i>
+                    <p>Detailed order history view is coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TRACK SHIPMENT ============ -->
+        <section class="dash-section" id="track">
+            <div class="section-head">
+                <div>
+                    <h1>Track Shipment</h1>
+                    <p class="section-sub">Enter a tracking number to see live status.</p>
+                </div>
+            </div>
+            <div class="panel">
+                <form class="track-form" id="trackForm">
+                    <input type="text" placeholder="Enter tracking number, e.g. STK-2291" required>
+                    <button type="submit" class="btn-primary">Track <i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+
+                <div class="tracker">
+                    <div class="tracker-step done">
+                        <span class="tracker-dot"></span>
+                        <p>Order confirmed</p>
+                        <span class="tracker-date">Jul 05</span>
+                    </div>
+                    <div class="tracker-step done">
+                        <span class="tracker-dot"></span>
+                        <p>Picked up</p>
+                        <span class="tracker-date">Jul 06</span>
+                    </div>
+                    <div class="tracker-step active">
+                        <span class="tracker-dot"></span>
+                        <p>In transit</p>
+                        <span class="tracker-date">Jul 09</span>
+                    </div>
+                    <div class="tracker-step">
+                        <span class="tracker-dot"></span>
+                        <p>Out for delivery</p>
+                        <span class="tracker-date">—</span>
+                    </div>
+                    <div class="tracker-step">
+                        <span class="tracker-dot"></span>
+                        <p>Delivered</p>
+                        <span class="tracker-date">—</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BILLING ============ -->
+        <section class="dash-section" id="billing">
+            <div class="section-head">
+                <div>
+                    <h1>Billing</h1>
+                    <p class="section-sub">Invoices and payment history.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">Download Statement <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+            <div class="panel">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Invoice</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#INV-1042</td><td>Jul 01, 2026</td><td>$620.00</td>
+                                <td><span class="status status-pending">Unpaid</span></td>
+                                <td><a href="./404.html" class="link-read">Pay now</a></td>
+                            </tr>
+                            <tr>
+                                <td>#INV-1031</td><td>Jun 01, 2026</td><td>$410.00</td>
+                                <td><span class="status status-delivered">Paid</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#INV-1020</td><td>May 01, 2026</td><td>$210.00</td>
+                                <td><span class="status status-delivered">Paid</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SUPPORT ============ -->
+        <section class="dash-section" id="support">
+            <div class="section-head">
+                <div>
+                    <h1>Support</h1>
+                    <p class="section-sub">Get help with an order, shipment, or invoice.</p>
+                </div>
+                <a href="./404.html" class="btn-primary">New Ticket <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-headset"></i>
+                    <p>You have 1 open ticket. Full support chat is coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SETTINGS ============ -->
+        <section class="dash-section" id="settings">
+            <div class="section-head">
+                <div>
+                    <h1>Settings</h1>
+                    <p class="section-sub">Manage your profile and notification preferences.</p>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="empty-state">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Profile settings are coming soon.</p>
+                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
