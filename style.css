@@ -216,7 +216,7 @@ section{
     height:75px;
     overflow: visible;
     padding:0 60px;
-    background: #0B3A5B; 
+    background:var(--primary-dark); 
     box-shadow: var(--shadow-sm);
     backdrop-filter: blur(30px);
 }
@@ -268,7 +268,7 @@ section{
     color: var(--secondary);
 }
 .contact{
-    color:rgb(255, 255, 255);
+    color:var(--primary-dark);
     padding:0 45px;
     display: flex;
     flex-wrap: nowrap;
@@ -882,9 +882,9 @@ section{
     }
     .nav-links{
         position: fixed;
-        top: 95px;
+        top: 75px;
         left: 0px;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         padding: 20px;
         background: var(--primary-dark);
@@ -897,11 +897,11 @@ section{
         transform: translateX(100%);
         transition: .35s ease;
 
-        overflow-y: auto;
         z-index: 999999;
     }
     .nav-links.active{
-        transform: translateX(0);
+        transform: translateX(-0);
+        margin: 0;
     }
     .nav-links a{
         width: 100%;
@@ -2424,7 +2424,7 @@ backdrop-filter: blur(10px);
 
     .hero-man{
         width: 340px;
-        left: 56%;
+        left: 50%;
     }
 }
 

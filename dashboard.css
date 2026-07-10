@@ -15,7 +15,6 @@
     width: 270px;
     flex-shrink: 0;
     background: var(--primary);
-    height: 100vh;
     position: sticky;
     top: 0;
     display: flex;
