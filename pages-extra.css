@@ -654,13 +654,7 @@
     font-family: var(--font-secondary);
     font-size: var(--fs-xs);
 }
-.auth-checkbox{
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    color:red;
-}
-.auth-checkbox input{ accent-color: var(--secondary); }
+
 .auth-options a{
     color: var(--secondary);
     text-decoration: none;
