@@ -113,17 +113,16 @@
     </div>
 
     <div class="field">
-        <label class="auth-checkbox">
-            <input type="checkbox" id="terms">
+    <div class="auth-checkbox">
+        <input type="checkbox" id="terms">
+        <label for="terms">
             I agree to the
-            <a href="./404.html"
-                style="color: var(--secondary); font-weight: 600; text-decoration: none;">
-                Terms of Service
-            </a>
+            <a href="./404.html" target="_blank">Terms of Service</a>
         </label>
-        <small class="error" id="termsError"></small>
     </div>
 
+    <small class="error" id="termsError"></small>
+</div>
     <button type="submit" class="btn-primary">
         Create Account
         <i class="fa-solid fa-arrow-right"></i>
@@ -225,7 +224,7 @@ form.addEventListener("submit", function (e) {
         localStorage.setItem("userEmail", email.value);
         localStorage.setItem("userRole", role.value);
 
-        alert("Account Created Successfully!");
+       
 
         form.reset();
 
@@ -245,6 +244,22 @@ document.getElementById("sFirstName").addEventListener("input", function () {
 document.getElementById("sLastName").addEventListener("input", function () {
     this.value = this.value.replace(/[^A-Za-z\s]/g, "");
 });
+const googleBtn = document.querySelector(".fa-google").parentElement;
+const microsoftBtn = document.querySelector(".fa-microsoft").parentElement;
+
+googleBtn.addEventListener("click", function () {
+    window.location.href = "404.html";
+});
+
+microsoftBtn.addEventListener("click", function () {
+    window.location.href = "404.html";
+});
+
+document.querySelectorAll(".error").forEach(function (error) {
+    error.textContent = "";
+});
+
+document.getElementById("termsError").textContent = "";
     </script>
 </body>
 

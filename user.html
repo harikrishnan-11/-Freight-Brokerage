@@ -22,11 +22,18 @@
             <button class="sidebar-close" id="sidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
         </div>
 
-        
+        <div class="sidebar-user">
+            <div class="sidebar-avatar">JD</div>
+            <div class="sidebar-user-info">
+                <p class="sidebar-user-name">Jordan Diaz</p>
+                <p class="sidebar-user-email">jordan.diaz@client.com</p>
+            </div>
+        </div>
+
         <nav class="sidebar-nav">
             <p class="nav-label">Main</p>
             <a href="#overview" class="nav-link active" data-section="overview">
-                <i class="fa-solid fa-grip"></i> Overview
+                <i class="fa-solid fa-grid-2"></i> Overview
             </a>
             <a href="#shipments" class="nav-link" data-section="shipments">
                 <i class="fa-solid fa-truck-fast"></i> My Shipments
@@ -75,10 +82,12 @@
                     <span class="notif-dot"></span>
                 </button>
                 <div class="topbar-user">
+                    <div class="topbar-avatar">JD</div>
                     <div class="topbar-user-text">
-                        <p class="topbar-user-name"><span id="userEmail"></span></p>
-                        <p class="topbar-user-email"><span id="userEmail"></span></p>
+                        <p class="topbar-user-name">Jordan Diaz</p>
+                        <p class="topbar-user-email">jordan.diaz@client.com</p>
                     </div>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
         </header>
@@ -87,7 +96,7 @@
         <section class="dash-section active" id="overview">
             <div class="section-head">
                 <div>
-                    <h1>Welcome back,</h1>
+                    <h1>Welcome back, Jordan</h1>
                     <p class="section-sub">Here's a snapshot of your account today.</p>
                 </div>
                 <a href="./404.html" class="btn-primary">New Booking <i class="fa-solid fa-plus"></i></a>
@@ -116,37 +125,95 @@
                 </div>
             </div>
 
-            <div class="panel">
-                <div class="panel-head">
-                    <h2>Recent activity</h2>
-                    <a href="./404.html" class="link-read">View all <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="quick-actions">
+                <a href="./404.html" class="quick-action">
+                    <span class="quick-action-icon"><i class="fa-solid fa-truck-fast"></i></span>
+                    Book Shipment
+                </a>
+                <a href="./404.html" class="quick-action">
+                    <span class="quick-action-icon"><i class="fa-solid fa-location-crosshairs"></i></span>
+                    Track Package
+                </a>
+                <a href="./404.html" class="quick-action">
+                    <span class="quick-action-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                    Pay Invoice
+                </a>
+                <a href="./404.html" class="quick-action">
+                    <span class="quick-action-icon"><i class="fa-solid fa-headset"></i></span>
+                    Contact Support
+                </a>
+            </div>
+
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h2>Recent activity</h2>
+                        <a href="./404.html" class="link-read">View all <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th>Shipment ID</th><th>Route</th><th>Status</th><th>ETA</th><th></th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#STK-2291</td><td>Chennai → Dubai</td>
+                                    <td><span class="status status-transit">In transit</span></td>
+                                    <td>Jul 12</td>
+                                    <td><a href="./404.html" class="link-read">Track</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#STK-2277</td><td>Coimbatore → London</td>
+                                    <td><span class="status status-delivered">Delivered</span></td>
+                                    <td>Jul 03</td>
+                                    <td><a href="./404.html" class="link-read">Track</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#STK-2265</td><td>Chennai → New York</td>
+                                    <td><span class="status status-pending">Pending pickup</span></td>
+                                    <td>Jul 16</td>
+                                    <td><a href="./404.html" class="link-read">Track</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr><th>Shipment ID</th><th>Route</th><th>Status</th><th>ETA</th><th></th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#STK-2291</td><td>Chennai → Dubai</td>
-                                <td><span class="status status-transit">In transit</span></td>
-                                <td>Jul 12</td>
-                                <td><a href="./404.html" class="link-read">Track</a></td>
-                            </tr>
-                            <tr>
-                                <td>#STK-2277</td><td>Coimbatore → London</td>
-                                <td><span class="status status-delivered">Delivered</span></td>
-                                <td>Jul 03</td>
-                                <td><a href="./404.html" class="link-read">Track</a></td>
-                            </tr>
-                            <tr>
-                                <td>#STK-2265</td><td>Chennai → New York</td>
-                                <td><span class="status status-pending">Pending pickup</span></td>
-                                <td>Jul 16</td>
-                                <td><a href="./404.html" class="link-read">Track</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <div class="panel">
+                    <div class="panel-head">
+                        <h2>Notifications</h2>
+                        <a href="./404.html" class="link-read">Clear all</a>
+                    </div>
+                    <ul class="activity-feed">
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-transit"><i class="fa-solid fa-truck-fast"></i></span>
+                            <div>
+                                <p><strong>#STK-2291</strong> departed Chennai port</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-delivered"><i class="fa-solid fa-circle-check"></i></span>
+                            <div>
+                                <p><strong>#STK-2277</strong> was delivered in London</p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-pending"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                            <div>
+                                <p>Invoice <strong>#INV-1042</strong> is now due</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-transit"><i class="fa-solid fa-headset"></i></span>
+                            <div>
+                                <p>Support replied to your ticket <strong>#TCK-88</strong></p>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -160,6 +227,32 @@
                 </div>
                 <a href="./404.html" class="btn-primary">Book Shipment <i class="fa-solid fa-plus"></i></a>
             </div>
+
+            <div class="kpi-grid kpi-grid-3">
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-truck-fast"></i></span>
+                    <h3>4</h3>
+                    <p>In transit</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-clock"></i></span>
+                    <h3>2</h3>
+                    <p>Pending pickup</p>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3>21</h3>
+                    <p>Delivered all-time</p>
+                </div>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active">All</button>
+                <button class="filter-tab">Sea freight</button>
+                <button class="filter-tab">Air freight</button>
+                <button class="filter-tab">Road freight</button>
+            </div>
+
             <div class="panel">
                 <div class="table-wrap">
                     <table>
@@ -207,10 +300,34 @@
                 <a href="./404.html" class="btn-primary">Place Order <i class="fa-solid fa-plus"></i></a>
             </div>
             <div class="panel">
-                <div class="empty-state">
-                    <i class="fa-solid fa-box"></i>
-                    <p>Detailed order history view is coming soon.</p>
-                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Order ID</th><th>Items</th><th>Placed</th><th>Total</th><th>Status</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-1192</td><td>3 pallets</td><td>Jul 06, 2026</td><td>$1,240.00</td>
+                                <td><span class="status status-pending">Processing</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1150</td><td>1 container</td><td>Jun 18, 2026</td><td>$6,800.00</td>
+                                <td><span class="status status-delivered">Fulfilled</span></td>
+                                <td><a href="./404.html" class="link-read">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1109</td><td>8 boxes</td><td>May 27, 2026</td><td>$320.00</td>
+                                <td><span class="status status-delivered">Fulfilled</span></td>
+                                <td><a href="./404.html" class="link-read">Reorder</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1084</td><td>2 pallets</td><td>May 02, 2026</td><td>$980.00</td>
+                                <td><span class="status status-delivered">Fulfilled</span></td>
+                                <td><a href="./404.html" class="link-read">Reorder</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -305,11 +422,60 @@
                 </div>
                 <a href="./404.html" class="btn-primary">New Ticket <i class="fa-solid fa-plus"></i></a>
             </div>
-            <div class="panel">
-                <div class="empty-state">
-                    <i class="fa-solid fa-headset"></i>
-                    <p>You have 1 open ticket. Full support chat is coming soon.</p>
-                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head"><h2>Your tickets</h2></div>
+                    <ul class="message-list">
+                        <li class="message-item unread">
+                            <div class="message-avatar">S</div>
+                            <div class="message-body">
+                                <div class="message-top">
+                                    <p class="message-name">#TCK-88 · Delayed shipment</p>
+                                    <span class="message-time">2 days ago</span>
+                                </div>
+                                <p class="message-snippet">Support replied: "We've flagged this with the carrier and…"</p>
+                            </div>
+                        </li>
+                        <li class="message-item">
+                            <div class="message-avatar">S</div>
+                            <div class="message-body">
+                                <div class="message-top">
+                                    <p class="message-name">#TCK-72 · Invoice question</p>
+                                    <span class="message-time">Jun 14</span>
+                                </div>
+                                <p class="message-snippet">Resolved — refund was applied to invoice #INV-1020.</p>
+                            </div>
+                        </li>
+                        <li class="message-item">
+                            <div class="message-avatar">S</div>
+                            <div class="message-body">
+                                <div class="message-top">
+                                    <p class="message-name">#TCK-55 · Address change</p>
+                                    <span class="message-time">May 30</span>
+                                </div>
+                                <p class="message-snippet">Resolved — delivery address updated for #STK-2210.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-head"><h2>Quick help</h2></div>
+                    <ul class="activity-feed">
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-transit"><i class="fa-solid fa-circle-question"></i></span>
+                            <div><a href="./404.html" class="link-read">How do I track a shipment?</a></div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-pending"><i class="fa-solid fa-circle-question"></i></span>
+                            <div><a href="./404.html" class="link-read">How do I update my billing details?</a></div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon activity-icon-delivered"><i class="fa-solid fa-circle-question"></i></span>
+                            <div><a href="./404.html" class="link-read">What freight types do you support?</a></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -322,11 +488,56 @@
                     <p class="section-sub">Manage your profile and notification preferences.</p>
                 </div>
             </div>
-            <div class="panel">
-                <div class="empty-state">
-                    <i class="fa-solid fa-gear"></i>
-                    <p>Profile settings are coming soon.</p>
-                    <a href="./404.html" class="btn-primary">Discover more <i class="fa-solid fa-arrow-right"></i></a>
+
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head"><h2>Profile</h2></div>
+                    <form class="settings-form" id="settingsForm">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="sName">Full name</label>
+                                <input type="text" id="sName" value="Jordan Diaz">
+                            </div>
+                            <div class="field">
+                                <label for="sEmail">Email</label>
+                                <input type="email" id="sEmail" value="jordan.diaz@client.com">
+                            </div>
+                            <div class="field">
+                                <label for="sPhone">Phone</label>
+                                <input type="tel" id="sPhone" placeholder="Add phone number">
+                            </div>
+                            <div class="field">
+                                <label for="sCompany">Company</label>
+                                <input type="text" id="sCompany" placeholder="Add company name">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Save changes <i class="fa-solid fa-check"></i></button>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-head"><h2>Notifications</h2></div>
+                    <div class="toggle-row">
+                        <div>
+                            <p class="toggle-title">Shipment updates</p>
+                            <p class="toggle-sub">Email when a shipment status changes</p>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-row">
+                        <div>
+                            <p class="toggle-title">Billing reminders</p>
+                            <p class="toggle-sub">Alert before an invoice is due</p>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-row">
+                        <div>
+                            <p class="toggle-title">Marketing emails</p>
+                            <p class="toggle-sub">Occasional offers and product news</p>
+                        </div>
+                        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                    </div>
                 </div>
             </div>
         </section>

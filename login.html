@@ -100,10 +100,12 @@
 
                 <div class="auth-divider">or continue with</div>
 
+                
                 <div class="auth-social">
                     <button type="button"><i class="fa-brands fa-google"></i> Google</button>
                     <button type="button"><i class="fa-brands fa-microsoft"></i> Microsoft</button>
                 </div>
+
 
                 <p class="auth-switch">Don't have an account? <a href="./signup.html">Sign up</a></p>
             </div>
@@ -159,12 +161,22 @@ form.addEventListener("submit", function (e) {
 
 
         if (role.value === "admin") {
-            window.location.href = "admin.html";
+            window.location.href = "./admin.html";
         } else if (role.value === "user") {
-            window.location.href = "user.html";
+            window.location.href = "./user.html";
         }
 
     }
+});
+const googleBtn = document.querySelector(".fa-google").parentElement;
+const microsoftBtn = document.querySelector(".fa-microsoft").parentElement;
+
+googleBtn.addEventListener("click", function () {
+    window.location.href = "404.html";
+});
+
+microsoftBtn.addEventListener("click", function () {
+    window.location.href = "404.html";
 });
     </script>
 </body>

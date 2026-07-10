@@ -9,13 +9,40 @@
 /* ========== PAGE HERO (about / service / blog / contact) ========== */
 
 .page-hero{
-    background: var(--primary);
-    background-image:
-        linear-gradient(135deg, transparent 45%, rgba(255,255,255,.05) 45%, rgba(255,255,255,.05) 55%, transparent 55%);
-    background-size: 100% 100%;
+    background: #F15A24;
+   background-image:
+        linear-gradient(135deg, transparent 45%, rgba(255,255,255,.08) 45%, rgba(255,255,255,.08) 55%, transparent 55%),
+        linear-gradient(135deg, transparent 65%, rgba(255,255,255,.06) 65%, rgba(255,255,255,.06) 75%, transparent 75%);
+    background-size: cover;
     padding: 175px 0 90px;
     position: relative;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.about-hero{
+    background: url("./src/images/global-bc-compressed.webp");
+}
+.service-hero{
+    background: url("./src/images/h3_bg-5\ \(1\)\ \(1\).webp");
+     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.blog-hero{
+    background: url("./src/images/service_5.webp");
+     background-position: center;
+    background-size: cover;
+   
+}
+.contact-hero{
+    background: url("./src/images/service_3\ \(1\).webp");
+     background-position: center;
+    background-size: cover;
+        background-repeat: no-repeat;
+
 }
 .page-hero-inner{
     max-width: var(--container);
@@ -34,13 +61,13 @@
     margin-bottom: var(--space-lg);
 }
 .breadcrumb a{
-    color: rgba(255,255,255,.85);
+    color:#ffffff;
     text-decoration: none;
     transition: var(--transition);
 }
 .breadcrumb a:hover{ color: var(--accent); }
 .breadcrumb .sep{ color: rgba(255,255,255,.35); }
-.breadcrumb .current{ color: var(--accent); font-weight: var(--fw-semibold); }
+.breadcrumb .current{ color:#ffffff; font-weight: var(--fw-semibold); }
 
 .page-hero h1{
     font-family: var(--font-primary);
@@ -52,7 +79,7 @@
     max-width: 20ch;
 }
 .page-hero p.para{
-    color: rgba(255,255,255,.75);
+    color:#ffffff;
     margin-top: var(--space-md);
     max-width: 46ch;
 }
@@ -530,7 +557,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: var(--bg-body);
-    padding-top: 95px;
+    padding-top: 65px;
 }
 .auth-visual{
     position: relative;
@@ -631,7 +658,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-xs);
-    color: var(--text-secondary);
+    color:red;
 }
 .auth-checkbox input{ accent-color: var(--secondary); }
 .auth-options a{
